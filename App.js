@@ -6,8 +6,7 @@ export default function App() {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.header}>
-          <Image source={require('./assets/profile.jpg')} style={styles.profilePic}
-          />
+          <Image source={require('./assets/profile.jpg')} style={styles.profilePic}/>
           <Text style={styles.name}>Dharmik Mangukiya</Text>
           <Text style={styles.contact}>📧 drmikmangukiya@gmail.com</Text>
           <Text style={styles.contact}>📱 +431 276 1261</Text>

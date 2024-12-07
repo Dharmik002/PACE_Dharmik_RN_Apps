@@ -7,7 +7,6 @@ export default function App() {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.header}>
           <Image source={require('./assets/profile.jpg')} style={styles.profilePic}
-            // <Image source={require('./assets/file.png')} style={styles.logo} />
           />
           <Text style={styles.name}>Dharmik Mangukiya</Text>
           <Text style={styles.contact}>📧 drmikmangukiya@gmail.com</Text>
@@ -66,7 +65,7 @@ const styles = StyleSheet.create({
   },
   profilePic: {
     width: 150,
-    height: 190, // Passport-size photo ratio
+    height: 190,
     resizeMode: 'cover',
     borderRadius: 10,
     marginBottom: 20,
@@ -114,7 +113,7 @@ const styles = StyleSheet.create({
     color: '#333',
     marginBottom: 8,
     lineHeight: 24,
-    width: '48%', // Each item takes up 48% of the row
+    width: '48%',
     textAlign: 'left',
   },
 });

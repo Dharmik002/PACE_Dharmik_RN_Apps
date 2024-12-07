@@ -6,35 +6,44 @@ export default function App() {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.header}>
-          <Image
-            source={{
-              uri: 'https://via.placeholder.com/150',
-            }}
-            style={styles.profilePic}
+          <Image source={require('./assets/profile.jpg')} style={styles.profilePic}
+            // <Image source={require('./assets/file.png')} style={styles.logo} />
           />
           <Text style={styles.name}>Dharmik Mangukiya</Text>
-          <Text style={styles.contact}>📧 drmikmangukiya014@gmail.com</Text>
+          <Text style={styles.contact}>📧 drmikmangukiya@gmail.com</Text>
           <Text style={styles.contact}>📱 +431 276 1261</Text>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>🌟 Interests</Text>
-          <Text style={styles.info}>🎮 Gaming</Text>
-          <Text style={styles.info}>📚 Reading</Text>
-          <Text style={styles.info}>🎵 Music</Text>
-          <Text style={styles.info}>🏋️‍♂️ Fitness</Text>
-          <Text style={styles.info}>🌍 Traveling</Text>
-          <Text style={styles.info}>💡 Technology</Text>
+          <View style={styles.row}>
+            <Text style={styles.info}>🎮 Gaming</Text>
+            <Text style={styles.info}>📚 Reading</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.info}>🎵 Music</Text>
+            <Text style={styles.info}>🏋️‍♂️ Fitness</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.info}>🌍 Traveling</Text>
+            <Text style={styles.info}>💡 Technology</Text>
+          </View>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>💻 Professional Skills</Text>
-          <Text style={styles.info}>🖥️ React Native</Text>
-          <Text style={styles.info}>⚙️ Node.js</Text>
-          <Text style={styles.info}>🌐 JavaScript</Text>
-          <Text style={styles.info}>🛠️ Git & GitHub</Text>
-          <Text style={styles.info}>📱 Mobile App Development</Text>
-          <Text style={styles.info}>🔗 API Integration</Text>
+          <View style={styles.row}>
+            <Text style={styles.info}>🖥️ React Native</Text>
+            <Text style={styles.info}>🎨 UI/UX Design</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.info}>🌐 JavaScript</Text>
+            <Text style={styles.info}>🛠️ Git & GitHub</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.info}>🌐 Web Development</Text>
+            <Text style={styles.info}>🔗 API Integration</Text>
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -48,7 +57,8 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     alignItems: 'center',
-    padding: 20,
+    paddingVertical: 100,
+    paddingHorizontal: 20,
   },
   header: {
     alignItems: 'center',
@@ -56,11 +66,12 @@ const styles = StyleSheet.create({
   },
   profilePic: {
     width: 150,
-    height: 150,
-    borderRadius: 75,
+    height: 190, // Passport-size photo ratio
+    resizeMode: 'cover',
+    borderRadius: 10,
+    marginBottom: 20,
     borderColor: '#fff',
     borderWidth: 3,
-    marginBottom: 20,
   },
   name: {
     fontSize: 28,
@@ -93,10 +104,17 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ddd',
     paddingBottom: 5,
   },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
   info: {
     fontSize: 18,
     color: '#333',
     marginBottom: 8,
     lineHeight: 24,
+    width: '48%', // Each item takes up 48% of the row
+    textAlign: 'left',
   },
 });
